@@ -1,5 +1,104 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-go.uber-atomic (1.11.0-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 1.11.0
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Anthony Fok <foka@debian.org>  Thu, 21 Sep 2023 05:22:38 -0600
+
+golang-go.uber-atomic (1.10.0-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Anthony Fok ]
+  * Build-depend explicitly on golang-any (>= 2:1.18~) as per go.mod
+
+  [ Shengjing Zhu ]
+  * Add tzdata to Build-Depends (Closes: #1027912)
+  * Update Standards-Version to 4.6.2 (no changes)
+  * Use DH_GOLANG_EXCLUDES to skip building binaries
+
+ -- Shengjing Zhu <zhsj@debian.org>  Thu, 12 Jan 2023 19:08:29 +0800
+
+golang-go.uber-atomic (1.10.0-1) unstable; urgency=medium
+
+  * New upstream version 1.10.0
+  * Bump Standards-Version to 4.6.1 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Mon, 29 Aug 2022 13:08:46 -0600
+
+golang-go.uber-atomic (1.9.0-1) unstable; urgency=medium
+
+  * New upstream version 1.9.0
+  * Change Section from devel to golang
+  * Use dh-sequence-golang instead of dh-golang and --with=golang
+  * Mark library package with "Multi-Arch: foreign"
+  * Reorder fields in debian/control and debian/copyright
+    as would be generated in the next dh-make-golang release after 0.6.0-1
+  * Remove binary package's dependency on golang-github-stretchr-testify-dev
+    as it is only used in *_test.go files
+  * Remove fix-test-in-1.16.patch
+    as nocmp_test.go in atomic v1.9.0 passes with Go 1.16, 1.17 and 1.18
+
+ -- Anthony Fok <foka@debian.org>  Fri, 25 Feb 2022 02:53:38 -0700
+
+golang-go.uber-atomic (1.7.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 1.7.0.
+  * Add d/patches/fix-test-in-1.16.patch.
+    - Fix fail test in 1.18
+  * Update d/rules.
+    - Remove gen-atomicint and gen-atomicwrapper from installation.
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Sat, 05 Feb 2022 17:24:11 +0900
+
+golang-go.uber-atomic (1.4.0-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Aloïs Micard ]
+  * Update debian/gitlab-ci.yml (using pkg-go-tools/ci-config).
+
+  [ Nobuhiro Iwamatsu ]
+  * Bump debhelper-compat to 13.
+  * Update Standards-Version to 4.6.0.1 (no changes).
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Sat, 05 Feb 2022 10:37:41 +0900
+
+golang-go.uber-atomic (1.4.0-3) unstable; urgency=medium
+
+  * Source-only upload for migration to testing
+
+ -- Anthony Fok <foka@debian.org>  Wed, 01 Sep 2021 07:37:43 -0600
+
+golang-go.uber-atomic (1.4.0-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sat, 21 Aug 2021 11:33:16 +0100
+
+golang-go.uber-atomic (1.4.0-1) unstable; urgency=medium
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Anthony Fok ]
+  * New upstream version 1.4.0
+  * debian/gbp.conf: Set debian-branch to debian/sid for DEP-14 conformance
+  * Add debian/watch to track release tarballs
+  * Apply "cme fix dpkg" fixes:
+    - Change Priority from "extra" to "optional"
+    - Update debhelper dependency to "Build-Depends: debhelper-compat (= 12)"
+    - Bump Standards-Version to 4.5.0 (no change)
+  * Update Maintainer email address to team+pkg-go@tracker.debian.org
+  * Add myself to the list of Uploaders
+  * Add "Rules-Requires-Root: no" to debian/control
+
+ -- Anthony Fok <foka@debian.org>  Fri, 21 Feb 2020 02:24:27 -0700
+
+golang-go.uber-atomic (1.2.0+git20170719.9.70bd126-1) unstable; urgency=medium
+
+  * Initial release (Closes: #872018)
+
+ -- Pirate Praveen <praveen@debian.org>  Sun, 13 Aug 2017 19:18:58 +0530
